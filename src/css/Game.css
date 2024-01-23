@@ -241,6 +241,7 @@
 .game-retry svg {
   width: 1.5rem;
   height: 1.5rem;
+  cursor: pointer;
 }
 
 .game-retry:hover {
@@ -379,4 +380,5 @@
 .menu-music svg {
   width: 60%;
   height: 60%;
+  cursor: pointer;
 }/*# sourceMappingURL=Game.css.map */
