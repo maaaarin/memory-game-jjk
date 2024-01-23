@@ -115,7 +115,7 @@ const Game = ( { gamePhase, hasLost } ) => {
         }
 
         return () => clearTimeout(timerCount);
-    }, [timer, gamePhase, hasLost]);
+    }, [timer, gamePhase, hasLost, isDisordered]);
     
     // Selecciona una carta
     function selectCard(e) {
