@@ -10,14 +10,16 @@ const Menu = ( { gamePhase } ) => {
 
     useEffect(() => {
 
-        // Reinicia la música
-        if (menuSong.current.ended){
-            menuSong.current.play();
-        }
+
 
     }, [])
 
     function musicControls(){
+
+        // Reinicia la música
+        if (menuSong.current.ended){
+            menuSong.current.play();
+        }
 
         if (!songPaused){
             menuSong.current.pause();
