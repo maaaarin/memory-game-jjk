@@ -1,0 +1,353 @@
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  font-family: "PPMori";
+}
+
+@font-face {
+  font-family: "PPMori";
+  src: url(../assets/fonts/PPMori-Regular.otf);
+}
+@font-face {
+  font-family: "PPMori-SemiBold";
+  src: url(../assets/fonts/PPMori-SemiBold.otf);
+}
+.App {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.hide {
+  display: none;
+}
+
+.game {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.game-inner {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.game-fade {
+  width: 100%;
+  height: 100vh;
+  -o-object-fit: cover;
+     object-fit: cover;
+  background-color: #000;
+  opacity: 1;
+  position: absolute;
+  animation: fade 3s linear forwards;
+  z-index: 100;
+  pointer-events: none;
+}
+
+@keyframes fade {
+  to {
+    opacity: 0;
+  }
+}
+.cards {
+  display: grid;
+  grid: repeat(4, 1fr)/repeat(5, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  position: relative;
+  width: 7rem;
+  height: 7rem;
+  border-radius: 1rem;
+  perspective: 1000px;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  border-radius: 1rem;
+}
+
+.card-front, .card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1rem;
+}
+
+.card-front {
+  border: 1px solid #F5DB78;
+}
+
+.card-back {
+  transform: rotateY(180deg);
+}
+
+.selected {
+  transform: rotateY(180deg);
+}
+
+.matched {
+  transform: rotateY(180deg);
+}
+
+.unselectable {
+  pointer-events: none;
+}
+
+.game-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.timer, .pairs {
+  width: -moz-max-content;
+  width: max-content;
+  padding: 1rem 0.5rem;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.game-end {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.game-background {
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  z-index: -1;
+}
+
+.game-start {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.game-video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.video-gradient-left {
+  width: 25%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgb(0, 0, 0) 57%, rgba(0, 0, 0, 0) 100%);
+}
+
+.video-gradient-right {
+  width: 25%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 100;
+  background: rgb(0, 0, 0);
+  background: linear-gradient(90deg, rgba(0, 0, 0, 0) 0%, rgb(0, 0, 0) 57%);
+}
+
+.game-end {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.game-lost {
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  position: relative;
+  z-index: 10;
+  display: flex;
+}
+
+.video-lost {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.end-screen {
+  width: 100%;
+  height: 100vh;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.game-menu {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.start-button {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.start-button:hover {
+  background-color: #000;
+  color: #fff;
+  outline: 1px solid #fff;
+  transition-duration: 0.5s;
+}
+
+.game-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.game-title h1 {
+  font-size: 3.5rem;
+}
+.game-title h2 {
+  font-size: 2rem;
+}
+.game-title img {
+  width: 20rem;
+  margin-bottom: 1rem;
+}
+
+.lizard {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  margin: 1.5rem;
+  z-index: 1;
+}
+
+.party-lights {
+  width: 20vw;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  position: fixed;
+  filter: blur(10rem);
+  bottom: -17.5rem;
+  right: -17.5rem;
+  animation: party 2s infinite linear;
+}
+
+@keyframes party {
+  0% {
+    background-color: #0EA4FF;
+  }
+  20% {
+    background-color: #C53AFF;
+  }
+  40% {
+    background-color: #E87D5A;
+  }
+  60% {
+    background-color: #FFD81A;
+  }
+  80% {
+    background-color: #0DE81A;
+  }
+  100% {
+    background-color: #0EA4FF;
+  }
+}
+.credits {
+  font-size: 1.5rem;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: 1.5rem;
+}
+
+.credits-name {
+  font-family: PPMori-SemiBold;
+  text-align: center;
+  background: linear-gradient(to right, #FFF 20%, rgb(255, 100, 10) 40%, rgb(255, 100, 10) 60%, #FFF 80%);
+  background-size: 200% auto;
+  color: #000;
+  background-clip: text;
+  text-fill-color: transparent;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shine 2s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+.menu-music {
+  width: 3.25rem;
+  height: 3.25rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: 1px solid #fff;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5rem;
+}
+.menu-music svg {
+  width: 60%;
+  height: 60%;
+}/*# sourceMappingURL=Game.css.map */
