@@ -6,16 +6,6 @@ const Menu = ( { gamePhase } ) => {
     const [songPaused, setSongPaused] = useState(false);
 
     const menuSong = useRef(null);
-
-    useEffect(() => {
-      
-        // Reinicia la música
-            if (menuSong.current.ended){
-            menuSong.current.play();
-        }
-    
-    }, [])
-
     
     function musicControls(){
 
