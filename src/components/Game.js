@@ -106,6 +106,8 @@ const Game = ( { gamePhase, hasLost } ) => {
             hasLost(true);
             gamePhase('end-game');
         }
+
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     
         return () => clearInterval(timerCount);
     }, [timer]);
