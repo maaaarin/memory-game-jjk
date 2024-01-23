@@ -27,25 +27,30 @@ var matchSounds = [sound0, null, null, null, null, sound5, null, null, sound8];
 // Cartas
 var cards = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-// Desordenar cartas
-function disorderCards(arr) {
-
-    let newCards = arr;
-
-    for (let i = cards.length - 1; i > 0; i--) {
-    // i = 20
-    const ranPosition = Math.floor(Math.random() * (i - 1));
-    //
-    const temp = newCards[i]; // i: 20 x: 9
-    newCards[i] = newCards[ranPosition]; // i: 20 (9) = i:4(3);
-    newCards[ranPosition] = temp; // i: 4 (3) = 20 (9)
-    }
-    return newCards;
-}
-
-disorderCards(cards);
-
 const Game = ( { gamePhase, hasLost } ) => {
+
+
+    const [isDisordered, setIsDisordered] = useState(false);
+
+    // Desordenar cartas
+    function disorderCards(arr) {
+    
+        let newCards = arr;
+    
+        for (let i = cards.length - 1; i > 0; i--) {
+        // i = 20
+        const ranPosition = Math.floor(Math.random() * (i - 1));
+        //
+        const temp = newCards[i]; // i: 20 x: 9
+        newCards[i] = newCards[ranPosition]; // i: 20 (9) = i:4(3);
+        newCards[ranPosition] = temp; // i: 4 (3) = 20 (9)
+        }
+    
+        setIsDisordered(true);
+    
+        return newCards;
+    }
+    
 
     // Reproduce un sonido específico
     function playSound(value){
@@ -90,14 +95,16 @@ const Game = ( { gamePhase, hasLost } ) => {
 
     useEffect(() => {
 
-        // // Música
-        // ambientMusic();
+        // Desordenar cartas
+        if(!isDisordered){
+            disorderCards(cards);
+        }
 
         let timerCount;
 
         // Reduce tiempo del contador
         if (timer > 0){
-            timerCount = setInterval(() => {
+            timerCount = setTimeout(() => {
             setTimer((prevTimer) => prevTimer - 1);
             }, 1000);
         } else {
@@ -107,7 +114,7 @@ const Game = ( { gamePhase, hasLost } ) => {
             gamePhase('end-game');
         }
 
-        return () => clearInterval(timerCount);
+        return () => clearTimeout(timerCount);
     }, [timer, gamePhase, hasLost]);
     
     // Selecciona una carta
@@ -149,6 +156,7 @@ const Game = ( { gamePhase, hasLost } ) => {
                 // Finaliza el juego
                 soundAmbient.pause();
                 gamePhase('end-game');
+                hasLost(false);
             }
         } else {
 
@@ -173,7 +181,7 @@ const Game = ( { gamePhase, hasLost } ) => {
     }
 
     return (
-        <div className="game" style={{ backgroundImage: "url('/images/domain_expansion.jpeg')" }}>
+        <div className="game" style={{ backgroundImage: "url('/images/domain_expansion.webp')" }}>
            <audio src={audioAmbient} autoPlay={true} loop={true}></audio>
            <div className="game-inner">
                 <div className="game-fade"></div>

@@ -37,7 +37,7 @@ const Menu = ( { gamePhase } ) => {
                 }
             </div>
             <div className="game-title">
-                <img src="./images/suku_eyes.png" alt='img'/>
+                <img src="./images/suku_eyes.webp" alt='img'/>
                 <h1>Jujutsu Kaisen</h1>
                 <h2>Memory Game</h2>
             </div>

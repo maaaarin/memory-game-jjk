@@ -15,7 +15,7 @@ function App() {
         { gamePhase === "menu" && <Menu gamePhase={setGamePhase} />}
         { gamePhase === "start-game" && <StartGame gamePhase={setGamePhase} /> }
         { gamePhase === "game" && <Game gamePhase={setGamePhase} hasLost={setHasLost}/> }
-        { gamePhase === "end-game" && <EndGame gamePhase={setGamePhase} hasLost={hasLost}/> }
+        { gamePhase === "end-game" && <EndGame gamePhase={setGamePhase} hasLost={hasLost} setHasLost={setHasLost}/> }
       </div>
     );
 }

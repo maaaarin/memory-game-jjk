@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import LostGame from "./LostGame";
 
-const EndGame = ({ gamePhase, hasLost }) => {
+const EndGame = ({ gamePhase, hasLost, setHasLost }) => {
 
   const [isPlaying, setIsPlaying] = useState(true);
 
   function gameRetry(){
     gamePhase('game');
+    setHasLost(false);
   }
 
   return (
