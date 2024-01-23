@@ -88,7 +88,7 @@ const Game = ( { gamePhase, hasLost } ) => {
     // Minutos
     timerMinutes = Math.floor((timer % 3600) / 60);
 
-    useEffect(() => {
+    useEffect(({ gamePhase, hasLost } ) => {
 
         // Música
         ambientMusic();
@@ -107,8 +107,6 @@ const Game = ( { gamePhase, hasLost } ) => {
             gamePhase('end-game');
         }
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-    
         return () => clearInterval(timerCount);
     }, [timer]);
     
