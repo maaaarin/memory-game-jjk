@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import menuAudio from '../assets/sound/menu.mp3';
 
 
@@ -7,12 +7,6 @@ const Menu = ( { gamePhase } ) => {
     const [songPaused, setSongPaused] = useState(false);
 
     const menuSong = useRef(null);
-
-    useEffect(() => {
-
-
-
-    }, [])
 
     function musicControls(){
 
@@ -51,7 +45,7 @@ const Menu = ( { gamePhase } ) => {
                 }
             </div>
             <div className="game-title">
-                <img src="./images/suku_eyes.png"/>
+                <img src="./images/suku_eyes.png" alt='img'/>
                 <h1>Jujutsu Kaisen</h1>
                 <h2>Memory Game</h2>
             </div>
@@ -60,7 +54,7 @@ const Menu = ( { gamePhase } ) => {
                 <span className='credits-label'>Card Illustrations by: </span>
                 <span className="credits-name"> @AltoRosa</span>
             </div>
-            <img src="./images/lizard.gif" className='lizard'/>
+            <img src="./images/lizard.gif" className='lizard' alt='img'/>
             <div className="party-lights"></div>
         </div>
     )

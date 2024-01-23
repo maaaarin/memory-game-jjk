@@ -1,8 +1,7 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect,  useState } from "react";
 
 // Componentes
 import Card from "./Card";
-import EndGame from "./EndGame";
 
 // Estilos
 import "../css/Game.css";
@@ -61,14 +60,14 @@ const Game = ( { gamePhase, hasLost } ) => {
     function unableSelect() {
         let cardsElements = Array.from(document.getElementsByClassName("card"));
 
-        cardsElements.map((card) => {
-        if (
-            !card.classList.contains("selected") &&
-            !card.classList.contains("matched")
-        ) {
-            card.classList.toggle("unselectable");
-        }
-        });
+        cardsElements.forEach(card => {
+            if (
+                !card.classList.contains("selected") &&
+                !card.classList.contains("matched")
+            ) {
+                card.classList.toggle("unselectable");
+            }
+        }); 
     }
 
     // Selección de cartas
