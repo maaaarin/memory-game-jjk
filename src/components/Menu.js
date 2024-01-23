@@ -1,4 +1,4 @@
-import React, {  useEffect, useRef, useState } from 'react'
+import React, {  useRef, useState } from 'react'
 import menuAudio from '../assets/sound/menu.mp3';
 
 const Menu = ( { gamePhase } ) => {
