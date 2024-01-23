@@ -23,7 +23,7 @@ const Menu = ( { gamePhase } ) => {
     return (
         <div className='game-menu'>
             <div className="menu-music" onClick={() => { musicControls(); }}>
-                <audio src={menuAudio} ref={menuSong} autoPlay={true} loop={true}></audio>
+                <audio src={menuAudio} ref={menuSong} loop={true}></audio>
                 { songPaused ? 
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"  viewBox="0 0 16 16">
                         <path d="M11.536 14.01A8.47 8.47 0 0 0 14.026 8a8.47 8.47 0 0 0-2.49-6.01l-.708.707A7.48 7.48 0 0 1 13.025 8c0 2.071-.84 3.946-2.197 5.303z"/>
@@ -45,7 +45,9 @@ const Menu = ( { gamePhase } ) => {
             <button type="button" onClick={() =>{ gamePhase('start-game') }} className='start-button'>Start Game</button>
             <div className="credits">
                 <span className='credits-label'>Card Illustrations by: </span>
-                <span className="credits-name"> @AltoRosa</span>
+                <a href="https://www.instagram.com/altorosa/">
+                    <span className="credits-name"> @AltoRosa</span>
+                </a>
             </div>
             <img src="./images/lizard.gif" className='lizard' alt='img'/>
             <div className="party-lights"></div>

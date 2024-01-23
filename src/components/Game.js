@@ -78,7 +78,7 @@ const Game = ( { gamePhase, hasLost } ) => {
     var [pairs, setPairs] = useState(cards.length / 2);
 
     // Cuenta atrás
-    var [timer, setTimer] = useState(300),
+    var [timer, setTimer] = useState(60),
         timerSeconds,
         timerMinutes;
 

@@ -9,7 +9,6 @@ const Card = ({card, onSelectCard}) => {
         <div className="card-back">
           <img src={`/images/${card}.png`} alt='card-thumbnail'/>
         </div>
-
     </li>
   )
 }

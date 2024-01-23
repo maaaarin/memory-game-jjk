@@ -6,6 +6,7 @@
      -moz-user-select: none;
           user-select: none;
   font-family: "PPMori";
+  text-decoration: none;
 }
 
 @font-face {
@@ -219,6 +220,34 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.game-retry {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.game-retry svg {
+  width: 1.5rem;
+  height: 1.5rem;
+}
+
+.game-retry:hover {
+  background-color: #000;
+  color: #fff;
+  outline: 1px solid #fff;
+  transition-duration: 0.5s;
 }
 
 .game-menu {
