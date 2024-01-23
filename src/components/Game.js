@@ -78,7 +78,7 @@ const Game = ( { gamePhase, hasLost } ) => {
     var [pairs, setPairs] = useState(cards.length / 2);
 
     // Cuenta atrás
-    var [timer, setTimer] = useState(600),
+    var [timer, setTimer] = useState(300),
         timerSeconds,
         timerMinutes;
 
@@ -88,7 +88,7 @@ const Game = ( { gamePhase, hasLost } ) => {
     // Minutos
     timerMinutes = Math.floor((timer % 3600) / 60);
 
-    useEffect(({ gamePhase, hasLost } ) => {
+    useEffect(() => {
 
         // Música
         ambientMusic();
@@ -108,6 +108,7 @@ const Game = ( { gamePhase, hasLost } ) => {
         }
 
         return () => clearInterval(timerCount);
+        // eslint-disable-next-line 
     }, [timer]);
     
     // Selecciona una carta

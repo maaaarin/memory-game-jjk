@@ -18,7 +18,7 @@ const LostGame = ( { isPlaying } ) => {
   return (
     <div className="game-lost">
         <div className="video-gradient-left"></div>
-        <video src={gameLost} ref={videoLost} className="video-lost"  autoPlay></video>
+        <video src={gameLost} ref={videoLost} className="video-lost" autoPlay={true}></video>
         <div className="video-gradient-right"></div>
       </div>
   )
