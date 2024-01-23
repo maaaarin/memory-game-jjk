@@ -90,8 +90,8 @@ const Game = ( { gamePhase, hasLost } ) => {
 
     useEffect(() => {
 
-        // Música
-        ambientMusic();
+        // // Música
+        // ambientMusic();
 
         let timerCount;
 
@@ -108,8 +108,7 @@ const Game = ( { gamePhase, hasLost } ) => {
         }
 
         return () => clearInterval(timerCount);
-        // eslint-disable-next-line 
-    }, [timer]);
+    }, [timer, gamePhase, hasLost]);
     
     // Selecciona una carta
     function selectCard(e) {
@@ -173,19 +172,9 @@ const Game = ( { gamePhase, hasLost } ) => {
         setSelected(true);
     }
 
-    function ambientMusic(){
-
-        // Reproduce la amúsica
-        soundAmbient.play();
-
-        // Repite la amúsica
-        if (soundAmbient.ended){
-            soundAmbient.play();
-        }
-    }
-
     return (
         <div className="game" style={{ backgroundImage: "url('/images/domain_expansion.jpeg')" }}>
+           <audio src={audioAmbient} autoPlay={true} loop={true}></audio>
            <div className="game-inner">
                 <div className="game-fade"></div>
                 <div className="game-board">
