@@ -16,7 +16,6 @@ const Menu = ( { gamePhase } ) => {
             menuSong.current.play();
             setSongPaused(false);
         }
-
     }
     
     // Inicia el juego
