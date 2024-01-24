@@ -7,7 +7,7 @@ import EndGame from './components/EndGame';
 
 function App() {
 
-    const [gamePhase, setGamePhase] = useState('end-game'),
+    const [gamePhase, setGamePhase] = useState('menu'),
           [hasLost, setHasLost] = useState(false),
           [gameMode, setGameMode] = useState('normal');
 
