@@ -3,7 +3,7 @@ import LostGame from "./LostGame";
 import WinGame from "./WinGame";
 import endAudio from '../assets/sound/end.mp3';
 
-const EndGame = ({ gamePhase, hasLost, setHasLost, timer }) => {
+const EndGame = ({ gamePhase, hasLost, setHasLost }) => {
 
   const [isPlaying, setIsPlaying] = useState(true);
 
