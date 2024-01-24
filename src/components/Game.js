@@ -166,7 +166,7 @@ const Game = ( { gamePhase, hasLost, gameMode } ) => {
             previousCard.classList.remove("selected");
             currentCard.classList.remove("selected");
             unableSelect();
-            }, 1000);
+            }, (gameMode !== 'normal' ? 400 : 1000));
         }
 
         // Deselecciona las cartas
