@@ -74,9 +74,7 @@ const Menu = ( { gamePhase, gameMode } ) => {
             </div>
             <div className="credits">
                 <span className='credits-label'>Card Illustrations by: </span>
-                <a href="https://www.instagram.com/altorosa/">
-                    <span className="credits-name"> @AltoRosa</span>
-                </a>
+                <span className="credits-name"> AltoRosa </span> 🦊✨
             </div>
             <img src="./images/lizard.gif" className='lizard' alt='img'/>
             <div className="party-lights"></div>
