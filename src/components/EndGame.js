@@ -1,7 +1,9 @@
 import React, { useState } from "react";
 import LostGame from "./LostGame";
+import WinGame from "./WinGame";
+import endAudio from '../assets/sound/end.mp3';
 
-const EndGame = ({ gamePhase, hasLost, setHasLost }) => {
+const EndGame = ({ gamePhase, hasLost, setHasLost, timer }) => {
 
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -12,10 +14,19 @@ const EndGame = ({ gamePhase, hasLost, setHasLost }) => {
 
   return (
     <div className="game-end">
+      <audio src={endAudio} autoPlay={true} loop={true}></audio>
       { (hasLost && isPlaying ? <LostGame isPlaying={setIsPlaying}/> : '')}
-      <div className="end-screen" style={{ display: (hasLost && isPlaying ? "none" : "") }}>
+      { (!hasLost && isPlaying ? <WinGame isPlaying={setIsPlaying}/> : '')}
+      <div className="end-screen" style={{ display: (isPlaying ? "none" : "") }}>
         <div className="game-fade"></div>
         <h2>The game has finished.</h2>
+        { hasLost &&  <span>"..."</span>}
+        { !hasLost &&
+          <div className="game-stats">
+            <span>"You were strong."</span>
+            {/* <span>Time: { ( timer) } seconds.</span> */}
+          </div>
+        }
         <div className="game-options">
           <button type="button" className="game-home" onClick={() => { gamePhase('menu'); }}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-door-fill" viewBox="0 0 16 16">
