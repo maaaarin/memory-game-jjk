@@ -113,7 +113,7 @@ const Game = ( { gamePhase, hasLost, gameMode, timer, setTimer } ) => {
         }
 
         return () => clearTimeout(timerCount);
-    }, [timer, gamePhase, hasLost, isDisordered]);
+    }, [timer, gamePhase, hasLost, isDisordered, setTimer]);
     
     // Selecciona una carta
     function selectCard(e) {
