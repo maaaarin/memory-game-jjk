@@ -27,8 +27,7 @@ var matchSounds = [sound0, null, null, null, null, sound5, null, null, sound8];
 // Cartas
 var cards = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 
-const Game = ( { gamePhase, hasLost } ) => {
-
+const Game = ( { gamePhase, hasLost, gameMode } ) => {
 
     const [isDisordered, setIsDisordered] = useState(false);
 
@@ -72,7 +71,7 @@ const Game = ( { gamePhase, hasLost } ) => {
             ) {
                 card.classList.toggle("unselectable");
             }
-        }); 
+        });
     }
 
     // Selección de cartas
@@ -83,7 +82,7 @@ const Game = ( { gamePhase, hasLost } ) => {
     var [pairs, setPairs] = useState(cards.length / 2);
 
     // Cuenta atrás
-    var [timer, setTimer] = useState(60),
+    var [timer, setTimer] = useState((gameMode !== 'normal' ? 30 : 60)),
         timerSeconds,
         timerMinutes;
 

@@ -149,9 +149,9 @@
   z-index: -1;
 }
 
-.game-start {
+.game-video-start {
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -224,6 +224,31 @@
   gap: 1.25rem;
 }
 
+.game-options {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.game-home {
+  padding: 0.5rem;
+  border-radius: 15rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.5s;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+.game-home svg {
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
 .game-retry {
   font-size: 1.5rem;
   padding: 0.5rem 1rem;
@@ -244,7 +269,7 @@
   cursor: pointer;
 }
 
-.game-retry:hover {
+.game-retry:hover, .game-home:hover {
   background-color: #000;
   color: #fff;
   outline: 1px solid #fff;
@@ -400,4 +425,49 @@
   height: 2.5rem;
   color: #fff;
   cursor: pointer;
+}
+
+.game-modes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.normal-mode {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  color: #000;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.normal-mode:hover {
+  background-color: #000;
+  color: #fff;
+  outline: 1px solid #fff;
+  transition-duration: 1s;
+}
+
+.crazy-mode {
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  border: none;
+  outline: none;
+  background-color: #780a0a;
+  color: #fff;
+  transition-duration: 0.5s;
+  cursor: pointer;
+}
+
+.crazy-mode:hover {
+  background-color: rgb(162, 21, 21);
+  color: #fff;
+  outline: 1px solid #fff;
+  transition-duration: 1s;
 }/*# sourceMappingURL=Game.css.map */

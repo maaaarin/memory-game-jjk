@@ -8,13 +8,14 @@ import EndGame from './components/EndGame';
 function App() {
 
     const [gamePhase, setGamePhase] = useState('menu'),
-          [hasLost, setHasLost] = useState(false);
+          [hasLost, setHasLost] = useState(false),
+          [gameMode, setGameMode] = useState('normal');
 
     return (
       <div className="App">
-        { gamePhase === "menu" && <Menu gamePhase={setGamePhase} />}
-        { gamePhase === "start-game" && <StartGame gamePhase={setGamePhase} /> }
-        { gamePhase === "game" && <Game gamePhase={setGamePhase} hasLost={setHasLost}/> }
+        { gamePhase === "menu" && <Menu gamePhase={setGamePhase} gameMode={setGameMode} />}
+        { gamePhase === "start-game" && <StartGame gamePhase={setGamePhase} gameMode={gameMode} /> }
+        { gamePhase === "game" && <Game gamePhase={setGamePhase} hasLost={setHasLost} gameMode={gameMode}/> }
         { gamePhase === "end-game" && <EndGame gamePhase={setGamePhase} hasLost={hasLost} setHasLost={setHasLost}/> }
       </div>
     );

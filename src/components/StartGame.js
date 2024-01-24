@@ -1,7 +1,8 @@
 import React, { useEffect, useRef } from 'react';
-import domainExpansion from '../assets/video/domain_expansion.mp4';
+import video_normal from '../assets/video/game_normal.mp4';
+import video_crazy from '../assets/video/game_crazy.mp4';
 
-const StartGame = ( { gamePhase } ) => {
+const StartGame = ( { gamePhase, gameMode } ) => {
 
     const startVideo = useRef(null);
 
@@ -19,9 +20,13 @@ const StartGame = ( { gamePhase } ) => {
     });
 
     return (
-        <div className='game-start'>
+        <div className='game-video-start'>
             <div className="video-gradient-left"></div>
-            <video src={domainExpansion} className='game-video' ref={startVideo}></video>
+            { gameMode !== 'normal' ?
+            <video src={video_crazy} className='game-video' ref={startVideo}></video>
+            :    
+            <video src={video_normal} className='game-video' ref={startVideo}></video>
+            }
             <div className="video-gradient-right"></div>
         </div>
     )

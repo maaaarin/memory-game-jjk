@@ -1,10 +1,11 @@
 import React, {  useRef, useState } from 'react'
 import menuAudio from '../assets/sound/menu.mp3';
 
-const Menu = ( { gamePhase } ) => {
+const Menu = ( { gamePhase, gameMode } ) => {
 
     const [songPaused, setSongPaused] = useState(true),
-            [isPlaying, setIsPlaying] = useState(false);
+            [isPlaying, setIsPlaying] = useState(false),
+            [hasStarted, setHasStarted] = useState(false);
 
     const menuSong = useRef(null);
         
@@ -59,7 +60,18 @@ const Menu = ( { gamePhase } ) => {
                 <h1>Jujutsu Kaisen</h1>
                 <h2>Memory Game</h2>
             </div>
-            <button type="button" onClick={() =>{ gamePhase('start-game') }} className='start-button'>Start Game</button>
+            <div className="game-start">
+                { !hasStarted && 
+                <button type="button" onClick={() =>{ setHasStarted(true); }} className='start-button'>Start Game</button>
+                } 
+                { hasStarted && 
+                <div className="game-modes" >
+                    <button type="button" onClick={() =>{ gameMode('normal'); gamePhase('start-game') }} className='normal-mode'>Normal</button>
+                    <button type="button" onClick={() =>{ gameMode('crazy'); gamePhase('start-game') }} className='crazy-mode'>Crazy</button>
+                </div>                
+                }
+                
+            </div>
             <div className="credits">
                 <span className='credits-label'>Card Illustrations by: </span>
                 <a href="https://www.instagram.com/altorosa/">
