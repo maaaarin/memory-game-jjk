@@ -325,7 +325,7 @@
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 1.5rem;
+    margin: 3.5rem 3.5rem;
     z-index: 1;
 }
 
@@ -366,7 +366,7 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    margin: 1.5rem;
+    margin: 3.5rem;
 }
 
 .credits-name {
@@ -399,12 +399,32 @@
     position: absolute;
     top: 0;
     right: 0;
-    margin: 5rem;
+    margin: 3.5rem;
 
     svg{
         width: 60%;
         height: 60%;
         cursor: pointer;
 
+    }
+}
+
+.menu-social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 3.5rem;
+    color: #fff;
+    gap: 1rem;
+    font-size: 1.5rem;
+
+    svg{
+        width: 2.5rem;
+        height: 2.5rem;
+        color: #fff;
+        cursor: pointer;
     }
 }
